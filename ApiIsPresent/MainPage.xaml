@@ -29,7 +29,10 @@
                             <StackPanel>
                                 <TextBlock TextWrapping="Wrap">此应用将可用 API 标记为绿色，不可用 API 标记为暗红色。</TextBlock>
                                 <TextBlock TextWrapping="Wrap">Copyright 2017 Nukepayload2</TextBlock>
-                                <HyperlinkButton NavigateUri="https://nukepayload2.github.io/GenericPrivacyStatement/">隐私声明</HyperlinkButton>
+                                <StackPanel Orientation="Horizontal">
+                                    <HyperlinkButton Margin="2" NavigateUri="https://github.com/Nukepayload2/UwpApiIsPresent/">查看源码</HyperlinkButton>
+                                    <HyperlinkButton Margin="2" NavigateUri="https://nukepayload2.github.io/GenericPrivacyStatement/">隐私声明</HyperlinkButton>
+                                </StackPanel>
                             </StackPanel>
                         </Flyout>
                     </Button.Flyout>
@@ -44,6 +47,7 @@
             </StackPanel>
             <AutoSuggestBox HorizontalAlignment="Stretch"
                             Margin="0,4"
+                            PlaceholderText="输入你想查找的 API"
                             ItemsSource="{x:Bind ViewModel.FeatureNames,Mode=OneWay}"
                             Text="{x:Bind ViewModel.SearchString,Mode=TwoWay}"
                             Visibility="{x:Bind ViewModel.Searched,Mode=OneWay,Converter={StaticResource IsVisibleConverter}}"/>
